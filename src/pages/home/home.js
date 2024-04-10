@@ -112,11 +112,12 @@ function Home() {
         {/* Mapeia e renderiza as colunas */}
         {Object.entries(columns).map(([columnId, column]) => (
           <div key={columnId} className="flex flex-col items-center bg-white rounded p-4">
-            <h1 className="text-lg font-semibold mb-2">{column.name}</h1>
+            <h1 className="text-lg font-semibold mb-2">
+              {column.name}</h1>
             <Droppable droppableId={columnId} key={columnId}>
               {(provided) => (
-                <div 
-                  ref={provided.innerRef} 
+                <div
+                  ref={provided.innerRef}
                   className="bg-gray-200 rounded w-72 h-96 p-2 overflow-auto"
                 >
                   {/* Mapeia e renderiza as tarefas de cada coluna */}
@@ -131,17 +132,22 @@ function Home() {
                         >
                           <div className="overflow-hidden">
                             {/* Exibe título, resumo e data da tarefa */}
-                            <h3 className="font-semibold">{item.title}</h3>
-                            <div className="text-gray-600 overflow-hidden" style={{ maxHeight: "1.5em" }}>
-                              {item.summary.length > 50 ? `${item.summary.substring(0, 50)}...` : item.summary}
+                            <h3 className="font-semibold">
+                              {item.title}</h3>
+                            <div className="text-gray-600 overflow-hidden"
+                              style={{ maxHeight: "1.5em" }}>
+                              {item.summary.length > 20 ? `${item.summary.substring(0, 20)}...` : item.summary}
                             </div>
                             <div className="text-sm text-gray-500">{item.date}</div>
                           </div>
-                          <div>
+                          <div className="flex flex-col">
                             {/* Botões para editar, excluir e ampliar a tarefa */}
-                            <button className="text-sm text-gray-500 hover:text-blue-500" onClick={() => handleEditTask(item.id, item.title, item.summary, item.date)}>Editar</button>
-                            <button className="text-sm text-gray-500 hover:text-red-500 ml-2" onClick={() => handleDeleteTask(columnId, item.id)}>Excluir</button>
-                            <button className="text-sm text-gray-500 hover:text-blue-500 ml-2" onClick={() => openTaskDetails(item.id)}>Ampliar</button>
+                            <button className="text-sm text-gray-500 hover:text-blue-500"
+                              onClick={() => handleEditTask(item.id, item.title, item.summary, item.date)}>Editar</button>
+                            <button className="text-sm text-gray-500 hover:text-red-500 mt-2"
+                              onClick={() => handleDeleteTask(columnId, item.id)}>Excluir</button>
+                            <button className="text-sm text-gray-500 hover:text-blue-500 mt-2"
+                              onClick={() => openTaskDetails(item.id)}>Ampliar</button>
                           </div>
                         </div>
                       )}
@@ -153,7 +159,11 @@ function Home() {
             </Droppable>
             <div>
               {/* Botão para adicionar uma nova tarefa */}
-              <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600" onClick={() => { setShowAddTaskForm(true); setSelectedColumnId(columnId); }}>Criar Tarefa</button>
+              <button className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-4 py-2 mt-4 hover:px-5 hover:py-2.5 text-center"
+                onClick={() => { setShowAddTaskForm(true); setSelectedColumnId(columnId); }}>
+                Criar Tarefa
+              </button>
+
             </div>
           </div>
         ))}
