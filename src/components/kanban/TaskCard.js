@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faExpand } from '@fortawesome/free-solid-svg-icons';
-import TaskModal from "../TaskModal";
-import TaskDetailsModal from "../taskModalDetail";
+import TaskModal from "../TaskModal.js";
+import TaskDetailsModal from "../taskModalDetail.js";
 
 function TaskCard({ provided, item, columnId, onDelete, onEdit }) {
     const [isExpanded, setIsExpanded] = useState(false);

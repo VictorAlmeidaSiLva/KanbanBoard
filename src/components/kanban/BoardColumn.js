@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
-import TaskModal from "../TaskModal";
-import TaskCard from "./TaskCard"
+import TaskModal from "../TaskModal.js";
+import TaskCard from "./TaskCard.js"
 
 function BoardColumn({ columnId, column, onEdit, onCreate, onExpand, onDelete }) {
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BoardColumn from "./BoardColumn"
+import BoardColumn from "./BoardColumn.js"
 import { DragDropContext } from "react-beautiful-dnd";
 
 function Board() {
