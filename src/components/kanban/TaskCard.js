@@ -16,6 +16,31 @@ function TaskCard({ provided, item, columnId, onDelete, onEdit }) {
         setIsExpanded(false);
     }
 
+
+    const getTaskColorAndMessage = () => {
+        const currentDate = new Date();
+        const taskDate = new Date(item.date);
+        const differenceInDays = Math.ceil((taskDate - currentDate) / (1000 * 60 * 60 * 24));
+
+        let colorClass = '';
+        let message = '';
+
+        if (taskDate < currentDate) {
+            colorClass = 'text-red-500'; 
+            message = 'Atrasado';
+        } else if (differenceInDays === 0 || differenceInDays === 1) {
+            colorClass = 'text-yellow-500'; 
+            message = 'Prioritário';
+        } else {
+            colorClass = '';
+            message = 'Não prioritário';
+        }
+
+        return { colorClass, message };
+    }
+
+    const { colorClass, message } = getTaskColorAndMessage();
+
     return (
         <>
             <div
@@ -25,14 +50,14 @@ function TaskCard({ provided, item, columnId, onDelete, onEdit }) {
                 className="bg-white p-2 mb-2 rounded border border-gray-300 flex flex-col sm:flex-row justify-between items-center"
             >
                 <div className="overflow-hidden w-full">
-                    <h3 className="font-semibold truncate w-full">
+                    <h3 className={`font-semibold truncate w-full ${colorClass}`}>
                         {item.title}
                     </h3>
                     <div className="text-gray-600 overflow-hidden truncate w-full" style={{ maxHeight: "1.5em" }}>
                         {item.summary}
                     </div>
-                    <div className="text-sm text-gray-500 w-full">
-                        {item.date}
+                    <div className={`text-sm w-full ${colorClass}`}>
+                        {item.date} - {message}
                     </div>
                 </div>
                 <div className="flex flex-col items-end">
