@@ -3,9 +3,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 const TaskModal = ({ onClose, task, onCreate, onEdit }) => {
 
-  const [ title, setTitle ] = useState(task?.title || "");
-  const [ summary, setSummary ] = useState(task?.summary || "");
-  const [ date, setDate ] = useState(task?.date || "");
+  const [title, setTitle] = useState(task?.title || "");
+  const [summary, setSummary] = useState(task?.summary || "");
+  const [date, setDate] = useState(task?.date || "");
+  const [showError, setShowError] = useState(false);
 
   const handleSave = () => {
     const newTask = {
@@ -14,7 +15,8 @@ const TaskModal = ({ onClose, task, onCreate, onEdit }) => {
       date: date.trim(),
     };
 
-    if(newTask.title === '' || newTask.summary === '' || newTask.date === ''){
+    if (newTask.title === '' || newTask.summary === '' || newTask.date === '') {
+      setShowError(true);
       return;
     }
 
@@ -47,10 +49,17 @@ const TaskModal = ({ onClose, task, onCreate, onEdit }) => {
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Título" className="w-full border border-gray-300 rounded-md p-2 mb-4" />
         <textarea name="summary" value={summary} onChange={(e) => setSummary(e.target.value)} placeholder="Resumo" className="w-full border border-gray-300 rounded-md p-2 mb-4 h-32 resize-none"></textarea>
         <input type="date" name="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder="Data" className="w-full border border-gray-300 rounded-md p-2 mb-4" />
-        <button onClick={handleSave}
-          className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-4 py-2 mt-4 hover:px-5 hover:py-2.5">
-          {task?.id ? "Salvar" : "Adicionar Tarefa"}
-        </button>
+        <div className="flex justify-center">
+          <button onClick={handleSave}
+            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-4 py-2 mt-4">
+            {task?.id ? "Salvar" : "Adicionar Tarefa"}
+          </button>
+        </div>
+        {showError && (
+          <div  className="absolute bottom-0 left-0 right-0 text-center text-red-500 text-sm">
+            Por favor, preencha todos os campos.
+          </div>
+        )}
 
       </div>
     </div>

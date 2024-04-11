@@ -2,7 +2,10 @@ import { Board } from "../../components"
 
 function Home() {
   return (
-    <Board/>
+    <div className="flex-grow">
+      <Board />
+    </div>
+
   );
 }
 

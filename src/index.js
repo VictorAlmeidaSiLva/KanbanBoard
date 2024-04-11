@@ -11,11 +11,13 @@ import Footer from './components/footer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path='/' element={<Home />} />
-    </Routes>
-    <Footer />
+    <div className="flex flex-col h-screen">
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+      <Footer />
+    </div>
   </BrowserRouter>
 );
 
