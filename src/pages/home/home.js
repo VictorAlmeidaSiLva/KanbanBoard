@@ -1,11 +1,11 @@
-import { Board } from "../../components"
+import React from "react";
+import { Board } from "../../components";
 
 function Home() {
   return (
-    <div className="flex-grow">
+    <div>
       <Board />
     </div>
-
   );
 }
 

@@ -2,16 +2,15 @@ import { useState } from "react";
 import BoardColumn from "./BoardColumn"
 import { DragDropContext } from "react-beautiful-dnd";
 
-function Board(){
+function Board() {
 
-  // Estado inicial das colunas
   const [columns, setColumns] = useState({
     "1": { name: "A Fazer", items: [] },
     "2": { name: "Em Progresso", items: [] },
     "3": { name: "Concluído", items: [] }
   });
 
-  // Manipula o evento de arrastar e soltar tarefas
+
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
     if (!destination || (destination.droppableId === source.droppableId && destination.index === source.index)) {
@@ -46,36 +45,38 @@ function Board(){
       }
       return task;
     });
-    setColumns(prevColumns => ({ ...prevColumns, [columnId]: { ...prevColumns[columnId], items: updatedItems}}))
+    setColumns(prevColumns => ({ ...prevColumns, [columnId]: { ...prevColumns[columnId], items: updatedItems } }))
   }
 
   const handleAddTask = (editedTask, columnId) => {
-    setColumns(prevColumns => ({ ...prevColumns, [columnId]: { ...prevColumns[columnId], items: [ ...prevColumns[columnId].items, editedTask]}}))
+    setColumns(prevColumns => ({ ...prevColumns, [columnId]: { ...prevColumns[columnId], items: [...prevColumns[columnId].items, editedTask] } }))
   }
 
-  // Remove uma tarefa da coluna
   const handleDeleteTask = (columnId, taskId) => {
     const updatedItems = columns[columnId].items.filter(task => task.id !== taskId);
     setColumns(prevColumns => ({ ...prevColumns, [columnId]: { ...prevColumns[columnId], items: updatedItems } }));
   };
 
-  return(
-    <div className="grid grid-cols-3 gap-4 justify-center bg-gray-100 p-4">
-      <DragDropContext onDragEnd={onDragEnd}>
-        {/* Mapeia e renderiza as colunas */}
-        {Object.entries(columns).map(([columnId, column]) => (
-          <BoardColumn
-            key={"column-"+columnId}
-            columnId={columnId}
-            column={column}
-            onEdit={handleEditTask}
-            onCreate={handleAddTask}
-            onDelete={handleDeleteTask}
-          />
-        ))}
-      </DragDropContext>
+  return (
+    <div className="bg-blue-600 flex flex-col ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center p-2">
+        <DragDropContext onDragEnd={onDragEnd}>
+          {Object.entries(columns).map(([columnId, column]) => (
+            <BoardColumn
+              key={"column-" + columnId}
+              columnId={columnId}
+              column={column}
+              onEdit={handleEditTask}
+              onCreate={handleAddTask}
+              onDelete={handleDeleteTask}
+            />
+          ))}
+        </DragDropContext>
+      </div>
     </div>
-  )
+
+  );
+
 }
 
 export default Board;

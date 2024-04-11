@@ -25,7 +25,7 @@ const TaskDetailsModal = ({ onClose, task }) => {
           </svg>
         </button>
         <div className="px-4">
-          <h2 className="text-lg font-semibold mb-2">{task.title}</h2>
+          <h2 className="text-lg font-semibold mb-2 overflow-hidden">{task.title}</h2>
           <p className="text-gray-600 overflow-auto max-h-60">{task.summary}</p>
           <p className="text-sm text-gray-500">{task.date}</p>
         </div>

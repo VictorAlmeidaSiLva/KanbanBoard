@@ -50,7 +50,7 @@ function TaskCard({ provided, item, columnId, onDelete, onEdit }) {
                 className="bg-white p-2 mb-2 rounded border border-gray-300 flex flex-col sm:flex-row justify-between items-center"
             >
                 <div className="overflow-hidden w-full">
-                    <h3 className={`font-semibold truncate w-full ${colorClass}`}>
+                    <h3 className={`font-semibold truncate w-full`}>
                         {item.title}
                     </h3>
                     <div className="text-gray-600 overflow-hidden truncate w-full" style={{ maxHeight: "1.5em" }}>
