@@ -1,7 +1,3 @@
-# Aplicativo React
-
-Este é um aplicativo React simples para demonstração.
-
 ## Como Executar
 
 1. Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo em https://nodejs.org/.
@@ -23,6 +19,8 @@ yarn start
 
 O aplicativo estará disponível em seu navegador no seguinte endereço: `http://localhost:3000`.
 
+## O que é o Kanban Board
+
 O Kanban Board é uma aplicação de agenda de tarefas virtual que oferece uma abordagem visual e intuitiva para gerenciar atividades. Inspirado no método Kanban, ele organiza as tarefas em três colunas principais: A Fazer, Em Progresso e Concluído. Os usuários podem criar, editar e excluir tarefas, bem como movê-las entre essas colunas conforme o progresso.
 
 Principais Funcionalidades:
@@ -38,7 +36,8 @@ Principais Funcionalidades:
 
 O Kanban Board é uma ferramenta versátil que pode ser usada individualmente ou em equipes, tornando o gerenciamento de tarefas mais eficiente e colaborativo. Com uma interface simples e poderosas funcionalidades, ele ajuda os usuários a manterem-se organizados e focados em suas metas e projetos.
 
-Planejamentos Futuros para o Kanban Board
+## Planejamentos Futuros para o Kanban Board
+
 O Kanban Board está sempre em constante evolução para atender às necessidades dos usuários e proporcionar uma experiência ainda mais completa. Abaixo estão os planejamentos futuros para a aplicação:
 
 1. Sistema de Login e Conta de Usuário:
