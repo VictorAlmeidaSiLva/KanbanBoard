@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Aplicativo React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um aplicativo React simples para demonstração.
 
-## Available Scripts
+## Como Executar
 
-In the project directory, you can run:
+1. Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo em https://nodejs.org/.
 
-### `npm start`
+2. Clone este repositório em sua máquina local usando o seguinte comando:
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Navegue até o diretório do projeto:
+cd nome-do-repositorio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Instale as dependências do projeto usando npm ou yarn:
+npm install
 
-### `npm test`
+5. Após a conclusão da instalação, inicie o servidor de desenvolvimento executando o seguinte comando:
+npm start
+ou
+yarn start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+O aplicativo estará disponível em seu navegador no seguinte endereço: `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O Kanban Board é uma aplicação de agenda de tarefas virtual que oferece uma abordagem visual e intuitiva para gerenciar atividades. Inspirado no método Kanban, ele organiza as tarefas em três colunas principais: A Fazer, Em Progresso e Concluído. Os usuários podem criar, editar e excluir tarefas, bem como movê-las entre essas colunas conforme o progresso.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Principais Funcionalidades:
+1. Visualização Intuitiva: Interface intuitiva e amigável, com tarefas organizadas em colunas que representam diferentes estágios de conclusão.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Agendamento de Tarefas: Os usuários podem agendar tarefas para suas respectivas datas, facilitando o planejamento e a priorização das atividades.
 
-### `npm run eject`
+3. Movimentação de Tarefas: A capacidade de mover tarefas entre as colunas permite que os usuários acompanhem o progresso e visualizem facilmente o fluxo de trabalho.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Personalização: Os usuários podem personalizar as tarefas com informações adicionais, como descrição, data de vencimento, etc.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Gerenciamento de Tarefas: Funcionalidades para criar, editar e excluir tarefas, oferecendo controle total sobre o conteúdo do quadro Kanban.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+O Kanban Board é uma ferramenta versátil que pode ser usada individualmente ou em equipes, tornando o gerenciamento de tarefas mais eficiente e colaborativo. Com uma interface simples e poderosas funcionalidades, ele ajuda os usuários a manterem-se organizados e focados em suas metas e projetos.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Planejamentos Futuros para o Kanban Board
+O Kanban Board está sempre em constante evolução para atender às necessidades dos usuários e proporcionar uma experiência ainda mais completa. Abaixo estão os planejamentos futuros para a aplicação:
 
-## Learn More
+1. Sistema de Login e Conta de Usuário:
+Implementação de um sistema de autenticação para permitir que os usuários criem contas personalizadas e façam login para acessar seus quadros Kanban.
+Possibilidade de gerenciar múltiplos quadros e compartilhar quadros com outros usuários.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Adaptação para React Native:
+Desenvolvimento de uma versão mobile do Kanban Board utilizando React Native para tornar a aplicação acessível em dispositivos Android e iOS.
+Ajustes na interface para proporcionar uma experiência nativa e otimizada para telas de dispositivos móveis.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Funcionalidades Extras:
+Criação de colunas personalizadas: Permitir que os usuários criem suas próprias colunas para organizar as tarefas de acordo com suas necessidades específicas.
+Organização por tabelas: Introdução de uma opção para organizar as tarefas em tabelas, oferecendo uma nova perspectiva de visualização e organização.
+4. Melhorias de Desempenho e Usabilidade:
 
-### Code Splitting
+Otimização da performance da aplicação para garantir uma experiência fluida e responsiva, mesmo com um grande volume de tarefas.
+Aprimoramentos na interface do usuário para tornar a navegação e interação mais intuitivas e eficientes.
+Esses planejamentos futuros visam tornar o Kanban Board uma ferramenta ainda mais poderosa e adaptável às necessidades dos usuários, oferecendo funcionalidades avançadas, melhorias de desempenho e uma experiência de usuário aprimorada.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
